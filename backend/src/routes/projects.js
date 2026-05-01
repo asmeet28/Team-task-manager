@@ -1,0 +1,10 @@
+const express = require('express');
+const router = express.Router();
+const { getProjects, createProject, deleteProject } = require('../controllers/projectController');
+const { protect, adminOnly } = require('../middleware/authMiddleware');
+
+router.get('/', protect, getProjects);
+router.post('/', protect, adminOnly, createProject);
+router.delete('/:id', protect, adminOnly, deleteProject);
+
+module.exports = router;

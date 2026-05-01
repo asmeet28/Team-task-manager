@@ -1,0 +1,6 @@
+{
+  "name": "webapp",
+  "scripts": {
+    "start": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm run dev\""
+  }
+}
